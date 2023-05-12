@@ -4,19 +4,26 @@
  */
 package gui;
 
+import logic.*;
+
 /**
  *
  * @author dcstewart
  */
 public class DayPanel extends BasePanel {
 
-    /**
-     * Creates new form DayPanel
-     */
-    public DayPanel() {
-        initComponents();
+    private int dayIndex;
+    private Day day;
+    
+    public DayPanel(int dayIndex) {
+        this.dayIndex = dayIndex;
+        initComponents();  
     }
 
+    public void postInit() {
+        day = app.getDay(dayIndex);
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

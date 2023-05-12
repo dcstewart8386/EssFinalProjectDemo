@@ -22,10 +22,13 @@ public class App {
     public String[] getAllDateStrings() {
         String[] result = new String[days.length];
         for (int i = 0; i < numDays; i++) {
-            System.out.println(i);
             result[i] = days[i].getDateString();
         }
         return result;
+    }
+    
+    public Day getDay(int dayIndex) {
+        return days[dayIndex];
     }
     
     private void populateTestData() {

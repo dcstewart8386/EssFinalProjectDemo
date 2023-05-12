@@ -10,7 +10,7 @@ package gui;
  */
 public class BasePanel extends javax.swing.JPanel {
 
-    protected Frame mainFrame;
+    protected Frame frame;
     protected logic.App app;
     
     /**
@@ -20,15 +20,15 @@ public class BasePanel extends javax.swing.JPanel {
         //initComponents();
     }
     
-    public void setMainFrame(Frame mf) {
-        mainFrame = mf;
+    public void setMainFrame(Frame frame) {
+        this.frame = frame;
     }
     
     public void setApp(logic.App app) {
         this.app = app;
     }
     
-    public void init() {}
+    public void postInit() {}
 
     /**
      * This method is called from within the constructor to initialize the form.
