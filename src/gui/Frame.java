@@ -17,8 +17,8 @@ public class Frame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public Frame() {
-        initComponents();
         app = new logic.App();
+        initComponents();
         switchToPanel(new AppPanel());
     }
 
@@ -39,11 +39,23 @@ public class Frame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainPanel1 = new gui.AppPanel();
+        appPanel2 = new gui.AppPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.CardLayout());
-        getContentPane().add(mainPanel1, "card2");
+
+        javax.swing.GroupLayout appPanel2Layout = new javax.swing.GroupLayout(appPanel2);
+        appPanel2.setLayout(appPanel2Layout);
+        appPanel2Layout.setHorizontalGroup(
+            appPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 426, Short.MAX_VALUE)
+        );
+        appPanel2Layout.setVerticalGroup(
+            appPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 299, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(appPanel2, "card2");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -87,6 +99,6 @@ public class Frame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private gui.AppPanel mainPanel1;
+    private gui.AppPanel appPanel2;
     // End of variables declaration//GEN-END:variables
 }

@@ -19,7 +19,16 @@ public class AppPanel extends BasePanel {
      */
     public AppPanel() {
         initComponents();
+
+    }
+    
+    public void init() {
         DefaultListModel<String> listModel = new DefaultListModel<>();
+        String[] dateStrings = app.getAllDateStrings();
+        for (int i = 0; i < dateStrings.length; i++) {
+            listModel.addElement(dateStrings[i]);
+        }
+        lstDays.setModel(listModel); 
     }
 
     

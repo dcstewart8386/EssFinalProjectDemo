@@ -17,7 +17,7 @@ public class BasePanel extends javax.swing.JPanel {
      * Creates new form BasePanel
      */
     public BasePanel() {
-        initComponents();
+        //initComponents();
     }
     
     public void setMainFrame(Frame mf) {
@@ -27,6 +27,8 @@ public class BasePanel extends javax.swing.JPanel {
     public void setApp(logic.App app) {
         this.app = app;
     }
+    
+    public void init() {}
 
     /**
      * This method is called from within the constructor to initialize the form.
