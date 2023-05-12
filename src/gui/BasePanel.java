@@ -10,7 +10,8 @@ package gui;
  */
 public class BasePanel extends javax.swing.JPanel {
 
-    private Frame mainFrame;
+    protected Frame mainFrame;
+    protected logic.App app;
     
     /**
      * Creates new form BasePanel
@@ -21,6 +22,10 @@ public class BasePanel extends javax.swing.JPanel {
     
     public void setMainFrame(Frame mf) {
         mainFrame = mf;
+    }
+    
+    public void setApp(logic.App app) {
+        this.app = app;
     }
 
     /**

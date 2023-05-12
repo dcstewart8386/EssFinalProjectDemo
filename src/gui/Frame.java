@@ -11,17 +11,20 @@ import javax.swing.*;
  */
 public class Frame extends javax.swing.JFrame {
 
+    private logic.App app;
        
     /**
      * Creates new form MainFrame
      */
     public Frame() {
         initComponents();
+        app = new logic.App();
         switchToPanel(new AppPanel());
     }
 
     public void switchToPanel(BasePanel nextPanel) {
         nextPanel.setMainFrame(this);
+        nextPanel.setApp(app);
         getContentPane().removeAll();
         getContentPane().add(nextPanel);
         validate();
