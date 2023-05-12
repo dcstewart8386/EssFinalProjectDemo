@@ -10,4 +10,9 @@ package logic;
  */
 public class App {
     
+    private Day[] days;
+    
+    public App() {
+        days = new Day[100];
+    }
 }
