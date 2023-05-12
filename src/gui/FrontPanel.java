@@ -8,18 +8,18 @@ package gui;
  *
  * @author dcstewart
  */
-public class MainPanel extends BasePanel {
+public class FrontPanel extends BasePanel {
 
-    private MainFrame mainFrame;
+    private App mainFrame;
     
     /**
      * Creates new form MainPanel
      */
-    public MainPanel() {
+    public FrontPanel() {
         initComponents();
     }
 
-    public void setMainFrame(MainFrame mainFrame) {
+    public void setMainFrame(App mainFrame) {
         this.mainFrame = mainFrame;
     }
     
