@@ -25,6 +25,7 @@ public class Frame extends javax.swing.JFrame {
     public void switchToPanel(BasePanel nextPanel) {
         nextPanel.setMainFrame(this);
         nextPanel.setApp(app);
+        nextPanel.init();
         getContentPane().removeAll();
         getContentPane().add(nextPanel);
         validate();
