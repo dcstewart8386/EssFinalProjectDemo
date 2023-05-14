@@ -17,6 +17,7 @@ public class Frame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public Frame() {
+        super("Weather Forecast App");
         app = new logic.App();
         initComponents();
         switchToPanel(new AppPanel());

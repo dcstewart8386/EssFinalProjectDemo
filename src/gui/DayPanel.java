@@ -4,6 +4,9 @@
  */
 package gui;
 
+import java.lang.*;
+import javax.swing.*;
+import java.awt.Color;
 import logic.*;
 
 /**
@@ -67,6 +70,14 @@ public class DayPanel extends BasePanel {
         jLabel6.setText("Sky:");
 
         txtYear.setColumns(10);
+        txtYear.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtYearFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtYearFocusLost(evt);
+            }
+        });
 
         txtMonth.setColumns(10);
 
@@ -166,14 +177,56 @@ public class DayPanel extends BasePanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
-        // TODO add your handling code here:
+        
+        // First we'll check all text fields for valid numbers, and abort if there is a problem
+        JTextField[] textFields = { txtYear, txtMonth, txtDay, txtHigh, txtLow };
+        for (int i = 0; i < textFields.length; i++) {
+            if (validateTextFieldNumber(textFields[i]) == false) {
+                return;
+            }
+        }
+        
+        // Now, update the day in the logic
+        day.updateDate(getTFNum(txtYear), getTFNum(txtMonth), getTFNum(txtDay));
+        day.updateForecast(getTFNum(txtHigh), getTFNum(txtLow), cmbSky.getSelectedIndex());
+        
+        frame.switchToPanel(new AppPanel());
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         frame.switchToPanel(new AppPanel());
     }//GEN-LAST:event_btnCancelActionPerformed
 
+    private void txtYearFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtYearFocusLost
+        validateTextFieldNumber(txtYear);
+    }//GEN-LAST:event_txtYearFocusLost
 
+    private void txtYearFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtYearFocusGained
+        txtYear.setBackground(Color.WHITE);
+    }//GEN-LAST:event_txtYearFocusGained
+
+    private boolean validateTextFieldNumber(JTextField tf) {
+        try {
+            Integer.parseInt(tf.getText());
+            return true;
+        }
+        catch (NumberFormatException e) {
+            tf.setBackground(Color.RED);
+            return false;
+        }
+    }
+    
+    private int getTFNum(JTextField tf) {
+        try {
+            return Integer.parseInt(tf.getText());
+        }
+        catch (NumberFormatException e) {
+            System.err.println("getTextFieldNumber was called on a text field containing a non-integer");
+        }      
+        return 0;
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnUpdate;
