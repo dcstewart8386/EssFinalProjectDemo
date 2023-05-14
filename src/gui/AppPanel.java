@@ -22,6 +22,10 @@ public class AppPanel extends BasePanel {
     }
     
     public void postInit() {
+        updateList();
+    }
+
+    public void updateList() {
         DefaultListModel<String> listModel = new DefaultListModel<>();
         String[] dateStrings = app.getAllDateStrings();
         for (int i = 0; i < dateStrings.length; i++) {
@@ -29,7 +33,6 @@ public class AppPanel extends BasePanel {
         }
         lstDays.setModel(listModel); 
     }
-
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -69,6 +72,11 @@ public class AppPanel extends BasePanel {
         jScrollPane1.setViewportView(lstDays);
 
         btnDelete.setText("Delete Day");
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
+            }
+        });
 
         btnAdd.setText("Add Day");
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -128,6 +136,11 @@ public class AppPanel extends BasePanel {
     private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
         frame.switchToPanel(new DayPanel(-1));
     }//GEN-LAST:event_btnAddActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+        app.deleteDay(lstDays.getSelectedIndex());
+        updateList();
+    }//GEN-LAST:event_btnDeleteActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

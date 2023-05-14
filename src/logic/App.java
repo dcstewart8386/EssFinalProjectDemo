@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
-/**
- *
- * @author dcstewart
- */
 public class App {
     
     private final int MAX_DAYS = 100;
@@ -20,7 +12,7 @@ public class App {
     }
     
     public String[] getAllDateStrings() {
-        String[] result = new String[days.length];
+        String[] result = new String[numDays];
         for (int i = 0; i < numDays; i++) {
             result[i] = days[i].getDateString();
         }
@@ -36,6 +28,13 @@ public class App {
         days[numDays].updateDate(year, month, day);
         days[numDays].updateForecast(high, low, skyIndex);
         numDays++;
+    }
+    
+    public void deleteDay(int index) {
+        for (int i = index; i < numDays; i++) {
+            days[i] = days[i+1];
+        }
+        numDays--;
     }
     
     private void populateTestData() {
