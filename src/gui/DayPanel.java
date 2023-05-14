@@ -215,8 +215,14 @@ public class DayPanel extends BasePanel {
         }
         
         // Now, update the day in the logic
-        day.updateDate(getTFNum(txtYear), getTFNum(txtMonth), getTFNum(txtDay));
-        day.updateForecast(getTFNum(txtHigh), getTFNum(txtLow), cmbSky.getSelectedIndex());
+        if (dayIndex == -1) {  // if we're adding a new day 
+            app.addDay(getTFNum(txtYear), getTFNum(txtMonth), getTFNum(txtDay), getTFNum(txtHigh), getTFNum(txtLow), cmbSky.getSelectedIndex());
+        }
+        else {
+            day.updateDate(getTFNum(txtYear), getTFNum(txtMonth), getTFNum(txtDay));
+            day.updateForecast(getTFNum(txtHigh), getTFNum(txtLow), cmbSky.getSelectedIndex());
+        }
+        
         
         frame.switchToPanel(new AppPanel());
     }//GEN-LAST:event_btnUpdateActionPerformed

@@ -16,18 +16,14 @@ public class Day {
     public static final int CLOUD = 2;
     public static final int RAIN = 3;
     
-    private int year;
-    private int month;
-    private int day;
+    private int year = 2000;
+    private int month = 1;
+    private int day = 1;
     private int high = 0;
     private int low = 0;
     private int skyIndex = CLEAR;
     
-    
-    public Day(int year, int month, int day) {
-        updateDate(year, month, day);
-    }
-    
+        
     public void updateDate(int year, int month, int day) {
         this.year = year;
         this.month = month;
