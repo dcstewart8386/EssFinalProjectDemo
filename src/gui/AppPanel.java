@@ -59,6 +59,11 @@ public class AppPanel extends BasePanel {
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
+        lstDays.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lstDaysMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(lstDays);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -86,13 +91,22 @@ public class AppPanel extends BasePanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnEditDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDayActionPerformed
-        // TODO add your handling code here:
+    private void handleListSelection() {
         if (lstDays.getSelectedIndex() < 0) {
             return;
         }
         frame.switchToPanel(new DayPanel(lstDays.getSelectedIndex()));
+    }
+    
+    private void btnEditDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditDayActionPerformed
+        handleListSelection();
     }//GEN-LAST:event_btnEditDayActionPerformed
+
+    private void lstDaysMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lstDaysMouseClicked
+        if (evt.getClickCount() == 2) {
+            handleListSelection();
+        }
+    }//GEN-LAST:event_lstDaysMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
