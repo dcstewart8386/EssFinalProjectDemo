@@ -11,10 +11,10 @@ package logic;
 public class Day {
 
     // constants to represent skyIndex values
-    private final int CLEAR = 0;
-    private final int MIX = 1;
-    private final int CLOUD = 2;
-    private final int RAIN = 3;
+    public static final int CLEAR = 0;
+    public static final int MIX = 1;
+    public static final int CLOUD = 2;
+    public static final int RAIN = 3;
     
     private int year;
     private int month;
@@ -38,6 +38,30 @@ public class Day {
         this.high = high;
         this.low = low;
         this.skyIndex = skyIndex;
+    }
+    
+    public int getYear() {
+        return year;
+    }
+    
+    public int getMonth() {
+        return month;
+    }
+    
+    public int getDay() {
+        return day;
+    }
+    
+    public int getHigh() {
+        return high;
+    }
+    
+    public int getLow() {
+        return low;
+    }
+    
+    public int getSkyIndex() {
+        return skyIndex;
     }
     
     public String getDateString() {

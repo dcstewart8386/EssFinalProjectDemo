@@ -22,6 +22,12 @@ public class DayPanel extends BasePanel {
 
     public void postInit() {
         day = app.getDay(dayIndex);
+        txtYear.setText(""+day.getYear());
+        txtMonth.setText(""+day.getMonth());
+        txtDay.setText(""+day.getDay());
+        txtHigh.setText(""+day.getHigh());
+        txtLow.setText(""+day.getLow());
+        cmbSky.setSelectedIndex(day.getSkyIndex());
     }
     
     /**

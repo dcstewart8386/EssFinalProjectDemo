@@ -33,8 +33,11 @@ public class App {
     
     private void populateTestData() {
         days[0] = new Day(2023, 5, 12);
+        days[0].updateForecast(24, 6, Day.CLOUD);
         days[1] = new Day(2023, 5, 13);
+        days[1].updateForecast(20, 8, Day.CLEAR);
         days[2] = new Day(2023, 5, 14);
+        days[2].updateForecast(18, 7, Day.RAIN);
         numDays = 3;
     }
 }
