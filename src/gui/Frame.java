@@ -50,11 +50,11 @@ public class Frame extends javax.swing.JFrame {
         appPanel2.setLayout(appPanel2Layout);
         appPanel2Layout.setHorizontalGroup(
             appPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 426, Short.MAX_VALUE)
+            .addGap(0, 378, Short.MAX_VALUE)
         );
         appPanel2Layout.setVerticalGroup(
             appPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 299, Short.MAX_VALUE)
+            .addGap(0, 453, Short.MAX_VALUE)
         );
 
         getContentPane().add(appPanel2, "card2");

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package gui;
 
 import java.lang.*;
@@ -9,10 +5,6 @@ import javax.swing.*;
 import java.awt.Color;
 import logic.*;
 
-/**
- *
- * @author dcstewart
- */
 public class DayPanel extends BasePanel {
 
     private int dayIndex;
@@ -24,6 +16,10 @@ public class DayPanel extends BasePanel {
     }
 
     public void postInit() {
+        // Check if we're inserting a new day
+        if (dayIndex == -1) {
+            return;
+        }
         day = app.getDay(dayIndex);
         txtYear.setText(""+day.getYear());
         txtMonth.setText(""+day.getMonth());
@@ -80,12 +76,44 @@ public class DayPanel extends BasePanel {
         });
 
         txtMonth.setColumns(10);
+        txtMonth.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtMonthFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtMonthFocusLost(evt);
+            }
+        });
 
         txtDay.setColumns(10);
+        txtDay.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtDayFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtDayFocusLost(evt);
+            }
+        });
 
         txtHigh.setColumns(10);
+        txtHigh.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtHighFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtHighFocusLost(evt);
+            }
+        });
 
         txtLow.setColumns(10);
+        txtLow.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtLowFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtLowFocusLost(evt);
+            }
+        });
 
         cmbSky.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Clear", "Mix Sun/Cloud", "Cloud", "Rain" }));
 
@@ -204,6 +232,38 @@ public class DayPanel extends BasePanel {
     private void txtYearFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtYearFocusGained
         txtYear.setBackground(Color.WHITE);
     }//GEN-LAST:event_txtYearFocusGained
+
+    private void txtMonthFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMonthFocusGained
+        txtMonth.setBackground(Color.WHITE);
+    }//GEN-LAST:event_txtMonthFocusGained
+
+    private void txtMonthFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtMonthFocusLost
+        validateTextFieldNumber(txtMonth);
+    }//GEN-LAST:event_txtMonthFocusLost
+
+    private void txtDayFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDayFocusGained
+        txtDay.setBackground(Color.WHITE);
+    }//GEN-LAST:event_txtDayFocusGained
+
+    private void txtDayFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtDayFocusLost
+        validateTextFieldNumber(txtDay);
+    }//GEN-LAST:event_txtDayFocusLost
+
+    private void txtHighFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHighFocusGained
+        txtHigh.setBackground(Color.WHITE);
+    }//GEN-LAST:event_txtHighFocusGained
+
+    private void txtHighFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHighFocusLost
+        validateTextFieldNumber(txtHigh);
+    }//GEN-LAST:event_txtHighFocusLost
+
+    private void txtLowFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtLowFocusGained
+        txtLow.setBackground(Color.WHITE);
+    }//GEN-LAST:event_txtLowFocusGained
+
+    private void txtLowFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtLowFocusLost
+        validateTextFieldNumber(txtLow);
+    }//GEN-LAST:event_txtLowFocusLost
 
     private boolean validateTextFieldNumber(JTextField tf) {
         try {

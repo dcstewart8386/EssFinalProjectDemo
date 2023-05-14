@@ -151,21 +151,37 @@
       <Properties>
         <Property name="columns" type="int" value="10"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtMonthFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtMonthFocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtDay">
       <Properties>
         <Property name="columns" type="int" value="10"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtDayFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtDayFocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtHigh">
       <Properties>
         <Property name="columns" type="int" value="10"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtHighFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtHighFocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="txtLow">
       <Properties>
         <Property name="columns" type="int" value="10"/>
       </Properties>
+      <Events>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtLowFocusGained"/>
+        <EventHandler event="focusLost" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="txtLowFocusLost"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JComboBox" name="cmbSky">
       <Properties>
