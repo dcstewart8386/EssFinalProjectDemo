@@ -1,8 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package gui;
+
+import logic.Day;
+
+import java.awt.Graphics;
+import java.awt.Color;
 
 /**
  *
@@ -10,12 +11,24 @@ package gui;
  */
 public class DayRenderPanel extends BasePanel {
 
-    /**
-     * Creates new form DayRenderPanel
-     */
-    public DayRenderPanel() {
+    private Day day;
+    private int dayIndex;
+    
+    public DayRenderPanel(int dayIndex) {
+        this.dayIndex = dayIndex;
         initComponents();
     }
+    
+    public void postInit() {
+        day = app.getDay(dayIndex);
+    }
+
+    public void paintComponent(Graphics g) {
+        super.paintComponent(g);
+        g.setColor(Color.WHITE);
+        g.fillRect(0, 0, frame.getWidth(), frame.getHeight() - 90);
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,6 +71,8 @@ public class DayRenderPanel extends BasePanel {
     }//GEN-LAST:event_btnCloseActionPerformed
 
 
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;
     // End of variables declaration//GEN-END:variables

@@ -49,7 +49,7 @@ public class AppPanel extends BasePanel {
         lstDays = new javax.swing.JList<>();
         btnDelete = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnRenderDay = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
         jLabel1.setText("Choose a day to edit:");
@@ -87,10 +87,10 @@ public class AppPanel extends BasePanel {
             }
         });
 
-        jButton1.setText("Render Day");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnRenderDay.setText("Render Day");
+        btnRenderDay.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnRenderDayActionPerformed(evt);
             }
         });
 
@@ -109,7 +109,7 @@ public class AppPanel extends BasePanel {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1)
+                            .addComponent(btnRenderDay)
                             .addComponent(jButton2)))
                     .addComponent(btnDelete)
                     .addComponent(btnAdd))
@@ -124,7 +124,7 @@ public class AppPanel extends BasePanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnRenderDay)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -163,16 +163,18 @@ public class AppPanel extends BasePanel {
         updateList();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        frame.switchToPanel(new DayRenderPanel());
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnRenderDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenderDayActionPerformed
+        if (lstDays.getSelectedIndex() >= 0) {
+            frame.switchToPanel(new DayRenderPanel(lstDays.getSelectedIndex()));
+        }
+    }//GEN-LAST:event_btnRenderDayActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEditDay;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnRenderDay;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
