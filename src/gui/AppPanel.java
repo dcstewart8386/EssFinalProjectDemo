@@ -88,8 +88,13 @@ public class AppPanel extends BasePanel {
         });
 
         jButton1.setText("Render Day");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jButton2.setText("Render Forecast");
+        jButton2.setText("Render 3 Day Forecast");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -108,7 +113,7 @@ public class AppPanel extends BasePanel {
                             .addComponent(jButton2)))
                     .addComponent(btnDelete)
                     .addComponent(btnAdd))
-                .addContainerGap(127, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,6 +162,10 @@ public class AppPanel extends BasePanel {
         app.deleteDay(lstDays.getSelectedIndex());
         updateList();
     }//GEN-LAST:event_btnDeleteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        frame.switchToPanel(new DayRenderPanel());
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

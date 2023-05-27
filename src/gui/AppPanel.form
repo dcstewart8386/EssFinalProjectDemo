@@ -32,7 +32,7 @@
                   <Component id="btnDelete" alignment="0" min="-2" max="-2" attributes="0"/>
                   <Component id="btnAdd" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="127" max="32767" attributes="0"/>
+              <EmptySpace pref="95" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -123,10 +123,13 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Render Day"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Render Forecast"/>
+        <Property name="text" type="java.lang.String" value="Render 3 Day Forecast"/>
       </Properties>
     </Component>
   </SubComponents>
