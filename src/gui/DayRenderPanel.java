@@ -33,6 +33,8 @@ public class DayRenderPanel extends BasePanel {
         String imgName = "";
         Image img = Toolkit.getDefaultToolkit().getImage(day.getImageName());
         g.drawImage(img, 80, 60, this);
+        g.drawString("High: "+day.getHigh(), 100, 220);
+        g.drawString("Low: "+day.getLow(), 100, 245);
     }
 
 
@@ -47,7 +49,7 @@ public class DayRenderPanel extends BasePanel {
 
         btnClose = new javax.swing.JButton();
 
-        btnClose.setText("Close");
+        btnClose.setText("Back");
         btnClose.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCloseActionPerformed(evt);
