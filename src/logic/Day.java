@@ -63,4 +63,12 @@ public class Day {
     public String getDateString() {
         return year+"/"+month+"/"+day;
     }
+    
+    public String getImageName() {
+        if (skyIndex == CLEAR) return "clear.png";
+        if (skyIndex == CLOUD) return "cloud.png";
+        if (skyIndex == MIX) return "mix.png";
+        if (skyIndex == RAIN) return "rain.png";
+        return "";
+    }
 }

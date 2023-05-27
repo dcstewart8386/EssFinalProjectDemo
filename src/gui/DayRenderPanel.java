@@ -2,8 +2,8 @@ package gui;
 
 import logic.Day;
 
-import java.awt.Graphics;
-import java.awt.Color;
+import java.awt.*;
+
 
 /**
  *
@@ -27,6 +27,12 @@ public class DayRenderPanel extends BasePanel {
         super.paintComponent(g);
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, frame.getWidth(), frame.getHeight() - 90);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.BOLD, 18));
+        g.drawString(day.getDateString(), 100, 30);
+        String imgName = "";
+        Image img = Toolkit.getDefaultToolkit().getImage(day.getImageName());
+        g.drawImage(img, 80, 60, this);
     }
 
 
