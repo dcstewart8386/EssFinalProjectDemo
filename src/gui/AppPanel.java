@@ -95,6 +95,11 @@ public class AppPanel extends BasePanel {
         });
 
         jButton2.setText("Render 3 Day Forecast");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -168,6 +173,10 @@ public class AppPanel extends BasePanel {
             frame.switchToPanel(new DayRenderPanel(lstDays.getSelectedIndex()));
         }
     }//GEN-LAST:event_btnRenderDayActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        frame.switchToPanel(new ForecastRenderPanel());
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
