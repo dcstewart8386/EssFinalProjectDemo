@@ -6,15 +6,12 @@ import javax.swing.*;
 // are: 
 //      getWidth(), getHeight(), switchToPanel()
 //
-// You probably won't need to make any modifications to this file
+// You probably won't need to make any modifications to this file, except for chaning the app title
 
 public class Frame extends javax.swing.JFrame {
 
     private logic.App app;
        
-    /**
-     * Creates new form MainFrame
-     */
     public Frame() {
         super("Weather Forecast App");
         app = new logic.App();

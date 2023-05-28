@@ -1,5 +1,6 @@
 package logic;
 
+// This will be the root class for the logic component of our program
 public class App {
     
     private final int MAX_DAYS = 100; // The number of days our app is capable of storing
