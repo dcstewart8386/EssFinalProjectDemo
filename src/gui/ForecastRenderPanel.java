@@ -26,27 +26,37 @@ public class ForecastRenderPanel extends BasePanel {
     }
     
     public void renderDay(Graphics g, int dayIndex) {
+        
+        // Get a reference to the Day object, for accessing our data
         Day day = app.getDay(dayIndex);
+        
+        // Render the date
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 14));
         g.drawString(day.getDateString(), dayIndex*100+20, 300);
         
+        // Render the bar for the high temperature
         g.setColor(Color.RED);
         int width = 20;
-        int height = day.getHigh()*5;
+        int height = day.getHigh()*5; // assumes we're using 5 pixels per degree
         int x = dayIndex*100+30;
         int y = 280 - height;
         g.fillRect(x, y, width, height);
+        
+        // Render the label for the high temperature
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", 0, 10));
         g.drawString(""+day.getHigh(), x+3, y-4);
         
+        // Render the bar for the low temperature
         g.setColor(Color.BLUE);
         width = 20;
         height = day.getLow()*5;
         x = dayIndex*100+50;
         y = 280 - height;
         g.fillRect(x, y, width, height);
+        
+        // Render the label for the low temperature
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", 0, 10));
         g.drawString(""+day.getLow(), x+3, y-4);
