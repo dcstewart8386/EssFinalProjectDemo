@@ -3,10 +3,7 @@ package gui;
 import java.awt.*;
 import logic.*;
 
-/**
- *
- * @author Dave
- */
+// The Panel for rendering the three day forecast graph
 public class ForecastRenderPanel extends BasePanel {
 
     private final int NUM_DAYS_TO_RENDER = 3;
@@ -16,10 +13,13 @@ public class ForecastRenderPanel extends BasePanel {
     }
 
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        super.paintComponent(g); // This will ensure the previous background gets erased
+        
+        // Paint the background
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, frame.getWidth(), frame.getHeight() - 90);
         
+        // Call an additonal method (defined below) to render each day
         for (int i = 0; i < NUM_DAYS_TO_RENDER; i++) {
             renderDay(g, i);
         }

@@ -1,14 +1,10 @@
 package gui;
 
 import logic.Day;
-
 import java.awt.*;
 
 
-/**
- *
- * @author Dave
- */
+// The panel for rendering the weather forecast for a particular day
 public class DayRenderPanel extends BasePanel {
 
     private Day day;
@@ -24,15 +20,22 @@ public class DayRenderPanel extends BasePanel {
     }
 
     public void paintComponent(Graphics g) {
-        super.paintComponent(g);
+        super.paintComponent(g); // This will ensure the previous background gets erased
+        
+        // Paint the white background
         g.setColor(Color.WHITE);
         g.fillRect(0, 0, frame.getWidth(), frame.getHeight() - 90);
+        
+        // Paint the date
         g.setColor(Color.BLACK);
         g.setFont(new Font("Arial", Font.BOLD, 18));
         g.drawString(day.getDateString(), 100, 30);
-        String imgName = "";
+        
+        // Paint the image
         Image img = Toolkit.getDefaultToolkit().getImage(day.getImageName());
         g.drawImage(img, 80, 60, this);
+        
+        // Paint the high and low temperatures
         g.drawString("High: "+day.getHigh(), 100, 220);
         g.drawString("Low: "+day.getLow(), 100, 245);
     }
@@ -77,9 +80,7 @@ public class DayRenderPanel extends BasePanel {
     private void btnCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCloseActionPerformed
         frame.switchToPanel(new AppPanel());
     }//GEN-LAST:event_btnCloseActionPerformed
-
-
-    
+   
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnClose;

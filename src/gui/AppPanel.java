@@ -1,22 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package gui;
 
 import logic.*;
 import javax.swing.*;
 
-/**
- *
- * @author dcstewart
- */
+// This class represents the first panel that appears when the program starts
 public class AppPanel extends BasePanel {
 
-    
-    /**
-     * Creates new form MainPanel
-     */
     public AppPanel() {
         initComponents();
     }
@@ -25,6 +14,10 @@ public class AppPanel extends BasePanel {
         updateList();
     }
 
+    // This populates the list box with the dates. The code is a little advanced.
+    // If you are populating your own list with data, you can copy this code but
+    // replace each instance of `dateStrings` with the name of your own array of
+    // strings that should go into the list
     public void updateList() {
         DefaultListModel<String> listModel = new DefaultListModel<>();
         String[] dateStrings = app.getAllDateStrings();
@@ -50,7 +43,7 @@ public class AppPanel extends BasePanel {
         btnDelete = new javax.swing.JButton();
         btnAdd = new javax.swing.JButton();
         btnRenderDay = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnRenderForecast = new javax.swing.JButton();
 
         jLabel1.setText("Choose a day to edit:");
 
@@ -94,10 +87,10 @@ public class AppPanel extends BasePanel {
             }
         });
 
-        jButton2.setText("Render 3 Day Forecast");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnRenderForecast.setText("Render 3 Day Forecast");
+        btnRenderForecast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnRenderForecastActionPerformed(evt);
             }
         });
 
@@ -115,7 +108,7 @@ public class AppPanel extends BasePanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnRenderDay)
-                            .addComponent(jButton2)))
+                            .addComponent(btnRenderForecast)))
                     .addComponent(btnDelete)
                     .addComponent(btnAdd))
                 .addContainerGap(95, Short.MAX_VALUE))
@@ -131,7 +124,7 @@ public class AppPanel extends BasePanel {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(btnRenderDay)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2)))
+                        .addComponent(btnRenderForecast)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnEditDay)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -174,9 +167,9 @@ public class AppPanel extends BasePanel {
         }
     }//GEN-LAST:event_btnRenderDayActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnRenderForecastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRenderForecastActionPerformed
         frame.switchToPanel(new ForecastRenderPanel());
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnRenderForecastActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -184,7 +177,7 @@ public class AppPanel extends BasePanel {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnEditDay;
     private javax.swing.JButton btnRenderDay;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btnRenderForecast;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JList<String> lstDays;

@@ -5,11 +5,14 @@ import javax.swing.*;
 import java.awt.Color;
 import logic.*;
 
+// This panel is for editing the properties of a day, or creating a new day
 public class DayPanel extends BasePanel {
 
     private int dayIndex;
     private Day day;
     
+    // Note - if creating a new day, a value of -1 will be passed as a parameter
+    // to `dayIndex`
     public DayPanel(int dayIndex) {
         this.dayIndex = dayIndex;
         initComponents();  
@@ -205,6 +208,8 @@ public class DayPanel extends BasePanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
+        // Note - this method uses the helper functions `validateTextFieldNumber`
+        // and `getTFNum`, defined later in this file
         
         // First we'll check all text fields for valid numbers, and abort if there is a problem
         JTextField[] textFields = { txtYear, txtMonth, txtDay, txtHigh, txtLow };
@@ -271,6 +276,8 @@ public class DayPanel extends BasePanel {
         validateTextFieldNumber(txtLow);
     }//GEN-LAST:event_txtLowFocusLost
 
+    // Given a text field object, returns `true` if the text field contains
+    // a number, otherwise returns `false`
     private boolean validateTextFieldNumber(JTextField tf) {
         try {
             Integer.parseInt(tf.getText());
@@ -282,6 +289,7 @@ public class DayPanel extends BasePanel {
         }
     }
     
+    // Given a text field object containing an integer, returns the integer
     private int getTFNum(JTextField tf) {
         try {
             return Integer.parseInt(tf.getText());
