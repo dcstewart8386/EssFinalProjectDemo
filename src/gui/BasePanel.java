@@ -1,25 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package gui;
 
-/**
- *
- * @author dcstewart
- */
+// This is a base class that all our other panels inherit from. It provides
+// our child classes with:
+//  - The `frame` property - a reference to the GUI main frame
+//  - The `app` property - a reference to the root of our data structure in the logic package
+//  - The `postInit` method, which will run after everything in the panel is initialized
+//
+// You shouldn't need to modify anything in this file
+
 public class BasePanel extends javax.swing.JPanel {
 
     protected Frame frame;
     protected logic.App app;
-    
-    /**
-     * Creates new form BasePanel
-     */
-    public BasePanel() {
-        //initComponents();
-    }
-    
+
     public void setMainFrame(Frame frame) {
         this.frame = frame;
     }

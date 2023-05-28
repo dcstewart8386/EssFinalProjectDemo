@@ -1,14 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package gui;
 import javax.swing.*;
 
-/**
- *
- * @author dcstewart
- */
+// This is the main container of our GUI. It contains the various panels that
+// our app will switch between. Methods you will likely use from this class
+// are: 
+//      getWidth(), getHeight(), switchToPanel()
+//
+// You probably won't need to make any modifications to this file
+
 public class Frame extends javax.swing.JFrame {
 
     private logic.App app;
