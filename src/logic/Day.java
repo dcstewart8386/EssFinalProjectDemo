@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
-/**
- *
- * @author dcstewart
- */
+// This class represents the weather data associated for a particular date
 public class Day {
 
     // constants to represent skyIndex values
@@ -16,6 +9,7 @@ public class Day {
     public static final int CLOUD = 2;
     public static final int RAIN = 3;
     
+    // The properties of this class are given some default values
     private int year = 2000;
     private int month = 1;
     private int day = 1;
@@ -60,10 +54,13 @@ public class Day {
         return skyIndex;
     }
     
+    // Returns the full date in Y/M/D format
     public String getDateString() {
         return year+"/"+month+"/"+day;
     }
     
+    // Returns the image filename to be used for this day, based on the value
+    // of the skyIndex property
     public String getImageName() {
         if (skyIndex == CLEAR) return "clear.png";
         if (skyIndex == CLOUD) return "cloud.png";
